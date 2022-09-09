@@ -297,12 +297,14 @@ struct attr_t : public dnnl::primitive_attr {
     return fuse_eltwise(algorithm::eltwise_pow, alpha, beta);
   }
 
-  static attr_t fuse_hardsigmoid() {
+// Disable this fusion until newer oneDNN support it
+/*  static attr_t fuse_hardsigmoid() {
+    constexpr float scale = 1.0f;
     constexpr float alpha = 1.0f / 6.0f;
     constexpr float beta = 1.0f / 2.0f;
     return fuse_eltwise(algorithm::eltwise_hardsigmoid, alpha, beta);
   }
-
+*/
   static attr_t fuse_binary(algorithm alg, memory::desc src_desc) {
     attr_t attr;
     post_ops po;
