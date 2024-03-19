@@ -572,7 +572,8 @@ void bind_constant_tensor_cache(pybind11::module& m) {
   m.def("get_constant_tensor_cache", &dnnl::graph::get_constant_tensor_cache);
 }
 
-void initOnednnGraphPythonBindings(pybind11::module& m) {
+void initOnednnGraphPythonBindings(PyObject* module) {
+auto m = pybind11::handle(module).cast<pybind11::module>();
   m.doc() = R"pbdoc(
         oneDNN Graph API Python binding
         -------------------------------
