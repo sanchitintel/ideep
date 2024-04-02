@@ -574,7 +574,7 @@ void bind_constant_tensor_cache(pybind11::module& m) {
 
 void initOnednnGraphPythonBindings(PyObject* module) {
   auto main_module = py::handle(module).cast<py::module>();
-  //! Top Level oneDNN Python submodule
+  // Top Level oneDNN Python submodule
   auto m = main_module.def_submodule("_onednn_graph");
   m.doc() = R"pbdoc(
         oneDNN Graph API Python binding
