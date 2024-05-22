@@ -52,6 +52,7 @@
 #define IDEEP_VERSION_PATCH    DNNL_VERSION_PATCH
 #define IDEEP_VERSION_REVISION 4
 
+
 // Check if ideep version prerequisite is met
 #define IDEEP_PREREQ(major, minor, patch, revision) \
   (((IDEEP_VERSION_MAJOR << 16) + (IDEEP_VERSION_MINOR << 8) + \
